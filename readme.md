@@ -35,7 +35,7 @@ Ecmascript is the Javascript standard intended to ensure the interoperability of
 
 # 6. What is JSON ?
 
-JSON (Javascript Object Notification) is ai lightweight
+JSON (Javascript Object Notification) is a lightweight
 format that is used for data interchanging. It is based on a subset of javascript language in the way Objects are built in Javascript.
 
 # 7. What are the syntax rules of JSON?
@@ -43,20 +43,96 @@ format that is used for data interchanging. It is based on a subset of javascrip
 Below are the list of syntax rules of JSON
 
 - Tne data is in name/value pairs
-- The datais separated by commas
+- The data is separated by commas
 - Curly braces hold objects
 - Square brackets hold arrays
 
-# 8. What DO YOU NEED JSON?
+# 8. Why do you need JSON?
 
-When exchanging data between a browser and a server, the else can only be text. Since JSON is text only, It can easily be sent to and from a server, and used as a data fomrat by an programming language.
+When exchanging data between a browser and a server, the data can only be text. Since JSON is text only, It can easily be sent to and from a server, and used as a data fomrat by any programming language.
 
-# 9. What are PNAs?
+# 9. What are PWAs?
 
-Progressive web Applications (PNAS) are a type of mobile app delivered through the web, built using common web technologies including HTML, CSS and Javascript. These PNAs are deployed to servers, accessible through URLs, and indeed by search engines.
+Progressive web Applications (PWAs) are a type of mobile app delivered through the web, built using common web technologies including HTML, CSS and Javascript. These PWAs are deployed to servers, accessible through URLs, and indeed by search engines.
 
-# 10. What is VB Javascript engine?
+# 10. What is V8 Javascript engine?
 
-VB is an open source high-performance Javascript engine
-used by the Google Chrome Browser, Writter in C++. It is also being used in the node.js project. It implements ECMAScript and WebAssembly, and runs on Windows 7 or later, macOS 10.12+, and Linux systems that user x64, IA-32, ARM, or MIPS processors. Note: It can run standalons, or can be embedded into any c++ application.
+V8 is an open source high-performance Javascript engine
+used by the Google Chrome Browser, Writter in C++. It is also being used in the node.js project.
+
+# 11. What is JQUery?
+
+jQuery is a popular cross-browser Javascript library that provides Document Object Model (DOM) traversal, event handling, animations and AJAX interactions by minimizing the descrepancies
+across browsers. It is widely famous with its philosophy of "write less, do more".
+
+# 12. What is the object type?
+
+The object type refers to a compound value where you can set propertised (named locations) that each hold their own values of any type.
+
+```javascript
+var obj = {
+  a: "hello Zareel", // property
+  b: 20,
+  c: true,
+};
+obj.a; // "hello Zareel", accessed with doted notation
+obj.b; // 20
+obj.c; // true
+
+obj["a"]; // "hello Zareel", accessed with bracket notation
+obj["b"]; // 20
+obj["c"]; // true
+```
+
+# 13. Explain arrays in Javascript
+
+An array is a collection of data displayed in a square bracket, separated with commas.
+
+```Javascript
+var arr = ["hello Prabir", 22, true];
+arr[0]; // "hello Prabir"
+arr[1]; // 22
+arr[2]; // true
+arr.length; // 3
+
+typeof arr; // "object"
+```
+
+# 14. What is typeof operator?
+
+Javascript provides is a typeof operator that can examine a value and tell you what type it is:
+
+```Javascript
+var a;
+typeof a; // "undefined"
+
+a = 42;
+typeof a; // "number"
+
+a = true;
+typeof a; // "boolean"
+
+a = null;
+typeof a; // "object" -- wierd, bug
+
+a = undefined;
+typeof a; // "undefined"
+
+a = {b: "c"};
+typeof a; // "object"
+```
+
+# 15. Explain equality in Javascript
+
+Javascript has both strict and type-converting comparison:
+Strict comparison (e.g., ===) checks for value equality and the datatypes Abstract comparison (e.g. ===) checks for value equality not datatypes
+
+```Javascript
+var a = "90";
+var b = 90;
+
+a == b; // true
+a === b; // false
+```
+
 ========================================================
