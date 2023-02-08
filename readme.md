@@ -457,3 +457,65 @@ function greet(greeting1, greeting2){
 greet.apply(employment1, ["Hello", "How are you?"]); // Hello Prabir Kumar, How are you?
 greet.apply(employment2, ["Hello", "How are you?"]); // Hello Kumar P, How are you?
 ```
+
+# 31. What is higher order function?
+
+HOF is a function that take aanother function as paremeter
+
+```Javascript
+let names = ["Zareel", "Shon", "Shine"];
+let message = names.forEach((name){
+  console.log("Hi" + name)
+})
+```
+
+# 32. What is a unary function?
+
+Unary function (i.e. monadic) is a function that accepts exactly one argument.
+
+```Javascript
+const unaryFunction = (a) => console.log(a + 20);
+```
+
+# 33. What is carrying function?
+
+Currying is the process of taking a function with multiple arguments and turning it into a sequence of functions each with only a single argument.
+
+```Javascript
+function volume(length){
+  return function(width){
+    return function (height){
+      return height * width * length;
+    };
+  };
+}
+
+volume(2)(6)(3); // 36
+```
+
+Curried functions are great to improve code re-usability and functional composition.
+
+# 34. What are the restrictions of web workers on DOM?
+
+Web Workers do not have access to below javascript objects since they are defined in an external files
+Window Object
+Document Object
+Parent Object
+
+# 35. What is a promise?
+
+Promises are used to handle asynchronous operations in Javascript. They provide an alternative approach for callbacks by reducing the callback hell the cleaner code.
+
+`Promise object has four states`
+
+- Pending - Initial state of promise. This state represents that the promise has neither been fulfilled nor been rejected, it is in pending state.
+
+- Fulfilled - This state represents that the promise has been rejected for some reason, meaning the async operation has failed.
+
+- Settled - This state represents that the promise has been either rejected or fulfilled.
+
+```Javascript
+const promise = new Promise(function(resolve, reject) {
+  // promise description
+});
+```
