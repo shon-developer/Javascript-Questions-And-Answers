@@ -463,10 +463,7 @@ greet.apply(employment2, ["Hello", "How are you?"]); // Hello Kumar P, How are y
 HOF is a function that take aanother function as paremeter
 
 ```Javascript
-let names = ["Zareel", "Shon", "Shine"];
-let message = names.forEach((name){
-  console.log("Hi" + name)
-})
+setTimeout(() => {})
 ```
 
 # 32. What is a unary function?
@@ -518,4 +515,87 @@ Promises are used to handle asynchronous operations in Javascript. They provide 
 const promise = new Promise(function(resolve, reject) {
   // promise description
 });
+```
+
+# 36. What is a callback function?
+
+A callback function is a function passed into another function as an argument.
+
+```Javascript
+setTimeout(() => ());
+```
+
+# 37. Why do we need callback?
+
+The callbacks are needed because javascript is a evnt driven language. That means instead of waiting for a response javascript will keep executing while listening for other events.
+
+Let us take an example with first function invoking an API call (simulated by setTimeout) and next function which logs the message
+
+```Javascript
+function firstFunction(){
+ // Simulate a code delay
+ setTimeout(function() {
+   console.log("First function called");
+ }, 1000);
+}
+function secondFunction(){
+console.log("Second function called");
+}
+firstFunction();
+secondFunction();
+
+Output;
+// Second function called
+// First function called
+```
+
+An observed from the output, javascript did not wait for the response of first function and remaining code block get executed. So callbacks used in a way to make sure that certain code does not execute until other code finished execution.
+
+# 38. What is a callback hell?
+
+Callback Hell is an anti-pattern with multiple nested callbacks which makes code hard to read and debug when dealing with asynchronous logic. The callback hell looks like below.
+
+`````Javascript
+async1(function(){
+  async2(function() {
+    async3(function() {
+      async4(function() {
+        ````
+      });
+    });
+  });
+});
+`````
+
+# 39. What is promise chaining?
+
+The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining.
+
+```Javascript
+new Promise(function(resolve, reject){
+  setTimeout(() => resolve(1), 1000)
+})
+  .then(function(result){
+    console.log(result); // 1
+    return result * 2;
+})
+  .then(function(result){
+  console.log(result); //2
+  return result * 3;
+})
+  .then(function(result){
+    console.log(result); // 6
+});
+```
+
+In the above handlers, the result is passed to the chain of .them() handlers with the below work flow,
+
+The initial promises in I second, after that. then handler is called by logging the result(1) and then return a promise with value of result \_2. After that the value passed to the next .then handler by logging the result(2) and return a promise with result \_3. Finally the value passed to the last. then handler by logging the result(6) and return a promise with resilt \* 4.
+
+# 40. What is avail?
+
+The avail() function evaluates Javascript code represented as a string can be a Javascript expression, variable, statement, or sequence of statements.
+
+```Javascript
+console.log(eval("3 + 2")); // 5
 ```

@@ -139,3 +139,12 @@ second("hello");
 //? Apply()
 let employee1 = { firstName: "Shine", lastName: "Latheef" };
 let employee2 = { firstName: "Shon", lastName: "Leo" };
+
+function volume(length) {
+  return function (width) {
+    return function (height) {
+      return height * width * length;
+    };
+  };
+}
+volume(2)(6)(3);
