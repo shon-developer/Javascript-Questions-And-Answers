@@ -683,3 +683,74 @@ setTimeout(function(){
   console.log("Heyy Zareel");
 }, 2000);
 ```
+
+# 48. What is the use of setIntervak?
+
+The setInterval() method is used to call a function or evaluates at specified intervals (in milliseconds). For example, let us log a message after 2 seconds setInterval method
+
+```Javascript
+setInterval(function() {
+  console.log("Heyy")
+}, 2000)
+```
+
+# 49. Why is Javascript treated as Single threaded?
+
+JavaScript is a single-threaded language. Because the language specification does not allow the programmer to write code does not that the interpretercan can run parts of it parallel in multitple threads or processes. WHereas languages like java, go C++ can make multi-threaded and multi-process programs.
+
+# 50. What is an event delegation?
+
+Event delegation is a technique for listening to events where you delegate a parent element as the listener for all of the events that happen inside it. For example, if you wanted to detect field changes in inside a specific form, you can use event delegation technique,
+
+```Javascript
+var form = document.querySelector("#registration-form");
+
+// Listen for changes to fields inside the from
+form.addEventListener(
+  "input",
+  function (event) {
+  // Log the field that was changed
+  console.log(event.target);
+  },
+  false
+)
+```
+
+# 51. What is the puspose JSON stringify?
+
+When sending data to a web server, the data has be in a string format. You can achieve this by converting JSON object into a string using
+
+`strigify() method.`
+
+```Javascript
+var userJSON = { name: "Shon", age: 43};
+var userString = JSON.stringify(user);
+console.log(userString);
+```
+
+# 52. How do you parse JSON string?
+
+When recieving the data from a web server, the data is always in a string format. But you can convert this string value to Javascript object using parse() method.
+
+```Javascript
+var userString = '{"name": "Prabir","age":25}';
+var userJSON = JSON.parse(userString);
+console.log(userJSON); // {name: "Prabir", age: 25}
+```
+
+# 53. What is the purpose of clearTimeout method?
+
+The clearTimeout() function is used in Javascript to clear the timeout which has been set by setTimeout() function before that. i.e, The return value of setTimeout() function is stored in a variable and it's passed into the clearTimeout() function to clear the timer. For example, the below setTimeout method is used to display the message after 3 seconds. This timeout can be cleared by clearTimeout() method.
+
+```Javascript
+var msg;
+function greeting() {
+  alert("Heyy Prabir");
+}
+function start() {
+  msg = setTimeout(greeting, 4000);
+}
+function stop() {
+  clearTimeout(msg);
+}
+```
