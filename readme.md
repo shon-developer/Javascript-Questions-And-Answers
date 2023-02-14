@@ -684,7 +684,7 @@ setTimeout(function(){
 }, 2000);
 ```
 
-# 48. What is the use of setIntervak?
+# 48. What is the use of setInterval?
 
 The setInterval() method is used to call a function or evaluates at specified intervals (in milliseconds). For example, let us log a message after 2 seconds setInterval method
 
@@ -752,5 +752,191 @@ function start() {
 }
 function stop() {
   clearTimeout(msg);
+}
+```
+
+# 54. What is the purose of clearInterval method?
+
+The clearInterval() function us used in javascript to clear the interval which has been set by setInterval() function.
+
+```Javascript
+var msg;
+function greeting() {
+  alert("Heyy Prabir");
+}
+function start() {
+  msg = setInterval(greeting, 4000);
+}
+function stop() {
+  clearInterval(msg);
+}
+```
+
+# 55. How do you redirect new page in javascript?
+
+In vanilla javascript, you can redirect to a new page using location property of window object. The syntax would be as follows,
+
+```Javascript
+function redirect() {
+  window.location.href= "newPage.html";
+}
+```
+
+# 56. How do you check whether a string contains a substring?
+
+There are 3 possible ways to check whether a string contains a substring or not,
+
+a.) Using includes: ES6 provided String.prototype.includes method to test a string contains a substring.
+
+```Javascript
+var mainString = "Shon",
+subString = "Sh";
+mainString.includes(subString);
+```
+
+b.) Using indexOf: In an ES5 or older environments, you can use String.prototype.indexOf which returns the index of subString. If the index value is not equal to -1 then it means the subString exist in the main string.
+
+```Javascript
+var mainString = "Shon",
+subString = "Sh"
+mainString.indexOf(subString) !=== -1;
+```
+
+c.) Using RegEx: The advanced solution is using Regular expression test method(RegExp.test), which allows for testing for against regular expressions
+
+```Javascript
+var mainString = "Shon";
+regex = "./Sh/";
+regex.test(mainString);
+```
+
+# 57. What are break and continue statements?
+
+The break statement is used to "jumps out" of a loop and continues executing the code after the loop.
+
+```Javascript
+for (1 = 0; 1 < 10; i++) {
+  if (i == 5) {
+    break;
+  }
+  text += "Number:" + i + "<br>"
+}
+```
+
+The continue statement is used to "jumps over" one direction in the loop. i.e, It breaks one iteration (in the loop), If a specified condition occurs, and continues with the next iteration in the loop.
+
+```Javascript
+for (i = 0; i < 10; i++) {
+  if (i === 5) {
+    continue;
+  }
+  text += "Number:" + i + "<br>";
+}
+```
+
+# 58. How do you define JSON arrays?
+
+JSON arrays are written inside square brackets and array contain javascript objects. For example, the JSON array of users would be as below,
+
+```Javascript
+"users":[
+  {"firstName":"Shon", "lastName":"Leo"},
+  {"firstName":"Shine", "lastName":"Leo"},
+  {"firstName":"Zareel", "lastName":"Kalam"},
+]
+```
+
+# 59. How do you generate random integers?
+
+You can use Math.random() with Math.floor() to return random integers, For example, If you want generate random integers between 1 to 10, the multiplication factor should be 10,
+
+```Javascript
+Math.floor(Math.random() * 10) + 1; // returns a random integer 1 to 10
+Math.floor(Math.random() * 100) + 1; // returns a random integer 1 to 100
+```
+
+# 60. How do you change style of a HTML element in Javascript?
+
+You can change inline style or classname of a HTML element using Javascript
+Using style property: You can modify inline style using style property
+
+```Javascript
+document.getElementById("title").style.fontSize = "40px";
+```
+
+Using ClassName property: It is easy to modify element class using className property
+
+```Javascript
+document.getElementById("title").style.className = "custom-title";
+```
+
+# 61. What is a debugger statement?
+
+- The debugger statement invokes any available debugging functionality, such as setting a breakpoint.
+- If no debugging functionality is available, this statement has no effect,
+- In the below function a debugger statement has been inserted.
+- So execution is paused at the debugger statement just like a breakpoint in the script source.
+
+```Javascript
+function getProfile(){
+  // code goes here
+  debugger;
+  // code goes here
+}
+```
+
+# 62. What is the purpose of breakpoints in debugging?
+
+- You can set breakpoints in the javascript code once the debugger statement is exeucted and debugger window pops up.
+- At each breakpoint, javascript will stop executing, and let you examine the Javascript values.
+- After examining values, you resume the execution of code using play button.
+
+# 63. Whis is the purpose of breakpoints in debugging?
+
+- You can set breakpoints in the javascript code once the debugger statement is executed and debugger window pops up.
+- At each breakpoint, javascript will stop executing, and let you examinee the Javascript values.
+- After examining values, you can resume the execution of code and play button.
+
+# 64. Can I use reserved words as identifiers?
+
+No, you cannot use the reserve words as variables, labels, object or function names.
+
+```Javascript
+var else = "hello"; // Uncaught SyntaxError: Unexpected token else
+```
+
+# 65. What is a conditional operator in javascript?
+
+The conditional (ternary) operator is the only Javascript operator that takes three operands which acts as a shortcut for it statement.
+var isAuthenticated = false;
+console.log(isAuthenitcated ? 'Hello, welcome' : 'Sorry, you are not authenitcated');
+
+# 66. Can you apply chaining on conditional operator?
+
+Yes, you can apply chaining on conditional operator similar to if ... else if ... else if ... else chain. The syntax is going to be as below,
+
+```Javascript
+function traceValue(someParam) {
+  return condition1
+  ? value1
+  ? condition2
+  ? value2
+  ? condition4
+  ? value3
+  ? value4
+}
+
+// The above conditional
+
+function traceValue(someParam) {
+  if(condition1){
+    return value1;
+  } else if (condition2) {
+    return value2;
+  } else if (condition3) {
+    return value3;
+  } else {
+    return value4;
+  }
 }
 ```

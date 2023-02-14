@@ -217,3 +217,166 @@ console.log(isNAN());
 
 console.log(typeof NaN);
 */
+
+//? setInterval
+/*
+setInterval(() => {
+  console.log("Hey Shon");
+}, 2000);
+*/
+
+//? delegation technique
+/*
+let form = document.querySelector("#registration-form");
+
+form.addEventListener(
+  "input",
+  (event) => {
+    console.log(event.target);
+  },
+  false
+);
+*/
+//? json stringify
+/*
+let userjson = { name: "zareel", age: 18 };
+let userString = JSON.stringify(userjson);
+console.log(userString);
+*/
+
+/*
+var userString = '{"name": "Prabir","age":25}';
+var userJSON = JSON.parse(userString);
+console.log(userJSON); // {name: "Prabir", age: 25}
+*/
+//? clearTimeout
+/*
+let msg;
+function greeting() {
+  alert("Hey Shon");
+}
+function start() {
+  msg = setTimeout(greeting, 4000);
+}
+function stop() {
+  clearTimeout(msg);
+}
+*/
+/*
+function myFun() {
+  console.log("Hello");
+  return "World";
+  console.log("Bye Bye");
+}
+myFun();
+*/
+
+//? clearInterval()
+var msg;
+function greeting() {
+  alert("Hey Shon");
+}
+
+function start() {
+  msg = setTimeout(greeting, 4000);
+}
+
+function stop() {
+  clearInterval(msg);
+}
+
+//? redirect
+/*
+function redirect() {
+  window.location.href = "newpage.html";
+}
+*/
+
+//? how to check if a string contains a substring
+
+//? includes() method
+/*
+let mainString = "Shon";
+let substring = mainString.includes("Sh");
+console.log(substring);
+*/
+/*
+let mainString = "Shon";
+let subString = "Sh";
+console.log(mainString.includes(subString));
+*/
+
+//? indexOf
+/*
+let mainString = "Shon";
+let subString = "Sh";
+console.log(mainString.indexOf(subString) !== -1);
+*/
+
+//? regex
+//! not working
+/*
+var mainString = "Shon";
+regex = "./Sh/";
+regex.test(mainString);
+*/
+
+//? break
+/*
+for (i = 0; i <= 10; i++) {
+  if (i === 5) {
+    break;
+  }
+  console.log(i);
+}
+*/
+
+//? continue
+/*
+for (i = 1; i <= 10; i++) {
+  if (i === 3) {
+    continue;
+  }
+  console.log(i);
+}
+*/
+
+//? JSON array
+/*
+let jsonArray = [{ firstName: "Shon" }, { lastName: "Leo" }, { Age: 18 }];
+*/
+
+//? How will you generate random numbers between 1 to 10
+/*
+let random = Math.floor(Math.random() * 10 + 1);
+console.log(random);
+*/
+/*
+let randomNumber = Math.floor(Math.random() * 100 + 1);
+console.log(randomNumber);
+*/
+
+//? Changing style of an element of an html element using javascript
+// using style property
+/*
+document.getElementById("title").style.fontSize = "50px";
+*/
+// using className property
+/*
+document.getElementById("title").style.className = "custom title"
+*/
+//? debugger statement
+
+function statement() {
+  // code goes here
+  debugger;
+  // code goes here
+}
+
+//? ternary operators
+
+let isAuthenticated = false;
+
+console.log(
+  isAuthenticated ? "Hello, welcome" : "Sorry, you are not authticated"
+);
