@@ -374,9 +374,121 @@ function statement() {
 }
 
 //? ternary operators
-
+/*
 let isAuthenticated = false;
 
 console.log(
   isAuthenticated ? "Hello, welcome" : "Sorry, you are not authticated"
 );
+
+*/
+
+//? to get the keys of objects
+/*
+let user = {
+  name: "Shon",
+  gender: "female",
+  age: "43",
+};
+console.log(Object.keys(user));
+*/
+
+//? to get the values
+/*
+let user = {
+  name: "Zareel",
+  gender: "female",
+};
+
+console.log(Object.values(user));
+*/
+//? What is object in javascript
+
+//* Anything inside the curly braces in known as an object
+//* Objects are in key-value pairs
+
+//? create an object with prototype
+//!not working
+/*
+let user = {
+  name: "Shon",
+  printInfo: function () {
+    console.log(`My name is ${this.name}`);
+  },
+};
+let admin = Object.create(person);
+console.log(Object);
+*/
+/*
+var msg = uneval(function greeting() {
+  return "HI Shon";
+});
+let greeting = eval(msg);
+greeting(); // returns "Hello, Prabir Kumar"
+*/
+
+//? anonymous function
+/*
+function(optionParameter){ // 
+  // do something
+}
+let myFunction = function(){
+  // do something
+}
+*/
+/*
+[1, 2, 3].map(function (element) {
+  // do something
+});
+*/
+/*
+let x = function (a, b) {
+  return a * b;
+};
+let z = x(2, 10);
+console.log(Shon);
+*/
+let arr = [];
+let i = 0;
+while (i <= 5) {
+  arr.push(i);
+  i++;
+}
+console.log(arr.sort().reverse());
+
+//? precendence order
+/*
+let msg = "Good Morning";
+
+function greeting() {
+  msg = "Good Evening";
+  console.log(msg);
+}
+greeting();
+*/
+
+//? javascript accessors, getters ans setters
+/*
+let user = {
+  firstName: "Prabir",
+  lastName: "Kumar",
+  language: "en",
+  get lang() {
+    return this.language;
+  },
+  set lang(lang) {
+    this.language = lang;
+  },
+};
+console.log(user.lang); // getter access lang as en
+user.lang = "fr";
+console.log(user.lang); // setter used to set lang as fr
+*/
+
+//? .call and .apply
+
+function add(a, b) {
+  return a + b;
+}
+console.log(add.call(null, 1, 2));
+console.log(add.apply(null, [5, 8]));

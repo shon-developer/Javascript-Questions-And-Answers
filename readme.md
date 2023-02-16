@@ -911,7 +911,7 @@ The conditional (ternary) operator is the only Javascript operator that takes th
 var isAuthenticated = false;
 console.log(isAuthenitcated ? 'Hello, welcome' : 'Sorry, you are not authenitcated');
 
-# 66. Can you apply chaining on conditional operator?
+# 65. Can you apply chaining on conditional operator?
 
 Yes, you can apply chaining on conditional operator similar to if ... else if ... else if ... else chain. The syntax is going to be as below,
 
@@ -939,4 +939,143 @@ function traceValue(someParam) {
     return value4;
   }
 }
+```
+
+# 66. What is the difference between proto and prototype?
+
+- The **proto** object is the actual object that is used in the lookup chain to resolve methods etc.
+- Whereas **prototype** is the object that is used to build **proto** when you create an object with **new**
+
+# 67. How can you get the list of keys on any object?
+
+- You can use Object.keys() method to get the keys of any objects
+
+```Javascript
+const user = {
+  name: "Shon",
+  gender: "male",
+  age: 18,
+};
+
+console.log(object.keys(user)); //['name', 'gender', 'age']
+```
+
+# 68. How do you create an object with prototype?
+
+- The Object.create() method is used to create a new object with the specified prototype object and properties.
+
+```Javascript
+const user = {
+  name: "Shon",
+  printInfo: fucntion (){
+    console.log('My name is $(this.name).');
+  },
+},
+
+const admin = Object.create(person);
+
+
+admin.name = "Kalam"; // Remember that "name" is a property set on "admin" but not on "user" object
+admin.printInfo(); // My name is Kumar
+```
+
+# 69. What is the difference between uneval and eval?
+
+- The uneval function() returns the source of a given object;
+- whereas the eval function evaluate that source code in a different memory area.
+
+```Javascript
+let msg = uneval(function greeting(){
+  return "Hello, Shon Latheef";
+});
+let greeting = eval(msg);
+greeting(); // returns "Hello, Prabir Kumar"
+```
+
+# 70. What is an anonymous function?
+
+An anonymous function is a function without a name! Anonymous function are commonly assigned to a variable name or used as a callback function. The syntax would be as below,
+
+```Javascript
+function(optionalParameters) {
+  // do something
+}
+const myFunction = function(){ // Anonymous function assigned to a variable
+  // do something
+};
+
+[1, 2, 3].map(function(element){ // Anonymous function used as a callback function
+  // do something
+});
+
+let x = function (a, b) {return a * b};
+let z = x(2, 10);
+console.log(z); // 20
+```
+
+# 71. What is the precedence order between local and global variables?
+
+A local variable takes precedence over a global variable with the same name.
+
+```Javascript
+let msg = "Good morning";
+function greeting(){
+  msg = "Good Evening";
+  console.log(msg);
+}
+greeting();
+```
+
+72. What are javascript accessors?
+
+ECMAScript introduced javscript object accessors or computed properties through getters and setters. Getters uses get keywords whereas Setters uses set keyword.
+
+```Javascript
+let user = {
+  firstName: "Prabir",
+  lastName: "Kumar",
+  language: "en",
+  get lang() {
+    return this.language;
+  }
+  set lang(lang){
+    this.language = lang;
+  }
+};
+console.log(user.lang); // getter access lang as en
+user.lang = 'fr';
+console.log(user.lang); // setter used to set lang as fr
+```
+
+# 73. What are the various statement in error landing?
+
+Below are the list of statement used in an error handling.
+
+- try: This statement is used to test a block of code for errors
+- catch: This statement is used to handle the error
+- throw: This statement is used to create custom errors.
+- finally: This statement is used to execute code after try and catch regardless of the result.
+
+# 74. Explain event delagation?
+
+- Event delegation is a technique of adding event listeners to a parent element instead of adding them to the descendant elements.
+- The listener will fire whenever the event is triggered on the descendant due to the event building up the DOM.
+- The benefits of the technique are:
+- Memory footprint goes down because only one single handler is needed on the parent element, rather than having to attach event handlers on each descendant.
+- There is no need to unbind the handler from elements that are removed and to bind the event for new elements.
+
+# 75. What is the difference between .call and .apply?
+
+- Both call and apply are used to invoke functions and
+- The first parameter will be used as the value of this with the function.
+- However, .call takes in comma-separated arguments as the next arguments while apply and an array of arguments.
+- An easy way to remember this is C for call and comma-separated and A for apply and an array of arguments.
+
+```Javascript
+funtion add(a + b){
+  return a + b;
+}
+
+console.log(add.call(null, 3, 2)); // 5
+console.log(add.apply(null, [3, 2])); // 5
 ```
