@@ -448,6 +448,7 @@ let x = function (a, b) {
 let z = x(2, 10);
 console.log(Shon);
 */
+/*
 let arr = [];
 let i = 0;
 while (i <= 5) {
@@ -455,7 +456,7 @@ while (i <= 5) {
   i++;
 }
 console.log(arr.sort().reverse());
-
+*/
 //? precendence order
 /*
 let msg = "Good Morning";
@@ -486,9 +487,51 @@ console.log(user.lang); // setter used to set lang as fr
 */
 
 //? .call and .apply
-
+/*
 function add(a, b) {
   return a + b;
 }
 console.log(add.call(null, 1, 2));
 console.log(add.apply(null, [5, 8]));
+*/
+/*
+let arr = [1, 2, 3];
+let total = 0;
+for (let i = 0; i < arr.length; i++) {
+  total += arr[i];
+}
+console.log(total);
+*/
+
+//? undefined
+/*
+let x;
+console.log(x);
+console.log(x === undefined);
+*/
+/*
+let x = 11;
+console.log(x);
+console.log(x === undefined);
+*/
+/*
+let outerFunction = () => {
+  let firstName = "Shon";
+  let innerFunction = () => {
+    console.log(firstName);
+  };
+  return innerFunction();
+};
+let closure = outerFunction();
+result();
+*/
+
+let outerFunction = () => {
+  let firstName = "Shon";
+  let innerFunction = () => {
+    console.log(firstName);
+  };
+  return innerFunction;
+};
+let result = outerFunction();
+result();

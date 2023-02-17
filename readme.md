@@ -1079,3 +1079,85 @@ funtion add(a + b){
 console.log(add.call(null, 3, 2)); // 5
 console.log(add.apply(null, [3, 2])); // 5
 ```
+
+# 76. Explain Function.prototype.bind?
+
+- The bind() method creates a new function that, when called, has its this keywords set to the provided value, with a given sequence of arguments preceding any provided when the new function has called.
+- It is most useful for binding the value of this in methods of classes that you want to pass into your other functions. This is frequently done in React components.
+
+```Javascript
+const module = {
+  x: 42;
+  getX: function () {
+    return this.x;
+  };
+};
+
+const unboundGetX = module.getX;
+console.log(unboundGetX()); // The function gets invoked at the global scope
+// Expected output: undefined
+
+const boundGetX = unboundGetX.bind(module);
+console.log(boundGetX());
+// Expected output: 42
+```
+
+# 77. Explain the difference between synchronous and asynchronous functions?
+
+- `Synchronous functions` are blocking while ``asynchronous functions are not.
+- In synchronous functions, ststements complete before the next statement is not.
+- In this case, the program is evaluated exactly in order of the statements and execution of the program is paused if one of the statements take a very long time.
+- Asynchronous function usually accept a callback as a parameter and execution continue on the next line immediately after the asynchronous function is invoked.
+- The callback is only invoked when the asynchronous operation is complete and the call stack is empty.
+- Heavy duty operations such as loading the data from a web server or querying a database should be done asynchronously so that the main thread can continue executing other operations instead of blocking until that long operation to complete(in the case of browsers, the UI will freeze).
+
+# 78. What is event loop? What is the difference between call stack and task queue?
+
+- The event loop is a single-threaded loop that monitors the call stack and checks if there is any work to be done in the task queue.
+- If the call stack is empty and there are callback functions in the task queue, a function is dequeued and pushed onto the call stack to be executed.
+- If you haven't already checked out Philip Robert's talk on the Event loop, you should. It should. It is one of the most viewed videos on Javascript
+
+# 79. What is the difference between undefined and not defined in Javascript?
+
+```Javascript
+let x; // declaring x
+console.log(x); // output: undfined
+```
+
+let x = 1 is both declaration and definition (also we can say we are doing initialisation),
+
+- Here declaration and assignment of value happen inline for variable x, In Javascript every variable declaration and function declaration brings to the top of its current scope in which It is declared then assignment happen in order this term is called hoisting.
+
+A variable can be declared but not defined. When we try to access it, It will result undefined.
+
+```Javascript
+var x; // Declaration
+typeof x === "undefined"; // will return true
+```
+
+A variable can be declared but not defined. When we try to access it, Will result undefined.
+
+```Javascript
+console.log(y); //Output: ReferenceError: y is not defined
+```
+
+# 80. What is closure?
+
+- A closure is a object that has access to variable in its enclosing lexical scope, even when the function is invoked outside that scope.
+- In other words, a closure gives you access to an outer function's scope from an inner function.
+
+```Javascript
+let outerFunction = () => {
+  let firstName = "Shon"
+  let innerFunction = () => {
+    console.log(firstName);
+  };
+  return innerFunction;
+};
+let closure = outerFunction();
+closure();
+```
+
+In this example, the inner function innerFunction is a closure. It has access to the outerVariable from its enclosing scope (the outerFunction). When we invoke the closure by calling closure(5), it returns the value of outerVariable + y (10 + 5), which is 15.
+
+A closure is created when an inner function is defined inside an outer function, and the inner function references variables defined in the outer function. The inner function is returned from the outer function, it's invoked it has access to the scope of the outer function.
