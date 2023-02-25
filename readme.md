@@ -1161,3 +1161,85 @@ closure();
 In this example, the inner function innerFunction is a closure. It has access to the outerVariable from its enclosing scope (the outerFunction). When we invoke the closure by calling closure(5), it returns the value of outerVariable + y (10 + 5), which is 15.
 
 A closure is created when an inner function is defined inside an outer function, and the inner function references variables defined in the outer function. The inner function is returned from the outer function, it's invoked it has access to the scope of the outer function.
+
+# 81. What is the difference between typeof and instanceof
+
+`typeof` is an operator that returns a string with the type of whatever you pass. The typeof operator checks if a value belongs to one of the seven basic types: number, string, boolean, object, function, undefined or symbol.
+
+typeof(null) will return object.
+
+`instanceof` is much more intelligent: it works on the level prototypes. In particular, it tests to see if the right operand anywhere in the prototype chain of the left. instanceof doesn't work with primitive types. It instanceof operator checks the current and returns true if the object is of the specified type, for example:
+
+```Javascript
+var name = new Animal();
+name instanceof String; // Output : true
+```
+
+Here dog instanceof Animal is true since dog inherits from Animal.prototype
+
+```Javascript
+var name = new String("xyz");
+name instanceof String; // Output : true
+```
+
+# 82. What is the difference between a method and a function is javascript?
+
+- A function is a place of code that is called by name
+- function itself not associated with any object and not defined inside any object.
+
+```Javascript
+// Function statement
+function myFunc(){
+  // Do some stuff;
+}
+
+// Calling the function
+myFunc();
+Here myFunc() function call is not associated with object hence not invoked through any object.
+
+A functioncan take a form of immediately invoked function expression (IIFE):
+// Anynomous Self-invoking Function
+(function(){
+  // Do more stuff;
+})();
+Finally there are also arrow functions:
+
+const myFunc = arg => {
+  console.log("hello", arg)
+}
+```
+
+- A method is a piece of code that is called by its name and
+- that is associated with the object. Methods are functions.
+
+# 83. What are promises and how they are useful?
+
+- We use promises for handling asynchronous interactions in a sequential manner.
+- They are especially useful when we need to do an async operation and then do another async operation based on the results of the first one.
+- It has an internal state `pending`, `fulfilled`, `rejected` and `resolved`.
+
+# 84. What is `this` keyword in javascript?
+
+- The `this` keyword reffers to an object.
+- It refers to differant objects depending on how it is used
+
+1. In an object `this` refers to the object
+2. Alone `this` refers to the global object
+3. In function `this` refers to the global object
+4. In a function in a strict mode `this` is undefined
+5. In an event `this` refers to the element that received the event
+6. Method like call(), apply(), and bind() can refer `this` to any object
+
+# 85. Note: Slice method wonot mutate the original array but it returns the subset as new array.
+
+- The slice() method returns the selected elements in an array as new array.
+- It selects the elements starting at the given start argument, and
+- ends at the given optional end argument excluding the last element.
+- If you omit the second argument then it selects till the end.
+
+```Javascript
+let arrayIntegers = [1, 2, 3, 4, 5];
+let arrayIntegers1 = arrayIntegers.slice(0, 2); // returns [1, 2]
+let arrayIntegers2 = arrayIntegers.slice(0, 2); // returns [3]
+let arrayIntegers3 = arrayIntegers.slice(4); // returns [5]
+```

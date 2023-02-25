@@ -525,7 +525,7 @@ let outerFunction = () => {
 let closure = outerFunction();
 result();
 */
-
+/*
 let outerFunction = () => {
   let firstName = "Shon";
   let innerFunction = () => {
@@ -535,3 +535,26 @@ let outerFunction = () => {
 };
 let result = outerFunction();
 result();
+*/
+
+//? typeof
+/*
+let firstName = "Shon";
+console.log(typeof firstName);
+
+let number = 100;
+console.log(typeof number);
+*/
+
+//? instanceof
+/*
+let dog = new Animal();
+dog instanceof Animal;
+*/
+
+//? slice()
+
+let numbers = [1, 2, 3, 4, 5, 6];
+console.log(numbers.slice(2, 4));
+
+34;
